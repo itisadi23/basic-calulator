@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+</head>
+<body style="background-image:url('background.jpg'); font-family: arial;">
+
+<h1  style="text-align: center;"> Enter the user details</h1>
+<div style="text-align:center;padding:10px;border:solid black 1px; display:block; background-color: white;  ">
+	<label for="name">Enter the name:</label>
+	<input  type="text" id="name" onchange="change(this.value);" value="FULL NAME"; ><br><br>
+	<label for="age"> Enter the age:</label>
+	<input type="text" id="age"   onchange="age(this.value);" value="0-60"><br><br>
+	<labek for="email">Enter Your Email</labek>
+	<input type="text" id="age" onchange="email(this.value);" value="username@domain.com"> <br><br>
+	<button onclick="verify();">SUBMIT</button>
+
+</div>
+<script >
+	flag1=false;
+	flag2=false;
+	flag3=false;
+	function change(val)
+	{
+		
+		if(val=="NA"||val=="")
+		{
+			window.alert("NAME IS IMPORTANT");
+			flag1=false;
+		}
+		else
+			flag1=true;
+	}
+	function age(val)
+	{
+		if(val>60)
+		{
+			window.alert("NOT ELEGIBLE TO USE Calculator\n");
+			flag2=false;
+		}
+		else
+			flag2=true;
+	}
+
+	function email(val)
+	{
+		var x=val.search("@");
+		if(x==-1)
+		{
+			window.alert("ENTER VALID EMAIL ID");
+			flag3=false;
+		}
+		else
+			flag3=true;
+	}
+
+	function verify()
+	{
+		if(flag1==true && flag2==true && flag3==true)
+		{
+			 location.replace("C:/xampp/htdocs/HTML/calcUI.php");
+		}
+		else
+			window.alert("LOOSER")
+	}
+
+</script>
+</body>
+</html>

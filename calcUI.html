@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WELCOME TO CALCULATOR</title>
+</head>
+<body style="font-family: arial">
+	<h1 style="background-color:lightgray;text-align:center; height:125px; padding:100px">WELCOME TO CALCULATOR</h1>
+
+	<style >
+		
+		.button {
+			  background-color: #4CAF50;
+			  border: 
+			  solid;
+			  color: white;
+			  padding: 15px 32px;
+			  text-align: center;
+			  text-decoration: none;
+			  display: inline-block;
+			  font-size: 16px;
+			  margin: 4px 2px;
+			  cursor: pointer;
+			}
+		.screen {
+	
+			  border: 3px solid black;
+			  padding: 15px 32px;
+			  text-align: center;
+			  text-decoration: none;
+			  display: inline-block;
+			  font-size: 20px;
+			  margin:25px 50px 75px 100px;;
+			}	
+	</style>
+<input class="screen" type="text" id="display" value="">	
+<div style=" margin:70px;">	
+<button class="button" id="one" onclick="oneClick(this.id);">1</button>
+<button class="button" id="two" onclick="oneClick(this.id);">2</button>
+<button class="button" id="three" onclick="oneClick(this.id)">3</button>
+<button class="button" id="plus" onclick="oneClick(this.id)">+</button><br><br>
+<button class="button" id="four" onclick="oneClick(this.id)">4</button>
+<button class="button" id="five" onclick="oneClick(this.id)">5</button>
+<button class="button" id="six" onclick="oneClick(this.id)">6</button>
+<button class="button" id="equals" onclick="oneClick(this.id)">=</button><br><br>
+<button class="button" id="seven" onclick="oneClick(this.id)">7</button>
+<button class="button" id="eight" onclick="oneClick(this.id)">8</button>
+<button class="button" id="nine" onclick="oneClick(this.id)">9</button><br><br>
+<button class="button" id="point" onclick="oneClick(this.id)">.</button>
+<button class="button" id="zero" onclick="oneClick(this.id)">0</button>
+<button class="button" id="ce" onclick="oneClick(this.id)">CE</button><br><br>
+
+</div>
+<script >
+function oneClick(clickedId)
+{
+
+
+	switch(clickedId)
+	{
+		case "one":document.getElementById("display").value=document.getElementById("display").value+"1";	
+				break;
+		case "two":document.getElementById("display").value=document.getElementById("display").value+"2";
+				break;
+		case "three":document.getElementById("display").value=document.getElementById("display").value+"3";	
+				break;
+		case "four":document.getElementById("display").value=document.getElementById("display").value+"4";	
+				break;
+		case "five":document.getElementById("display").value=document.getElementById("display").value+"5";	
+				break;
+		case "six":document.getElementById("display").value=document.getElementById("display").value+"6";	
+				break;
+		case "seven":document.getElementById("display").value=document.getElementById("display").value+"7";	
+				break;
+		case "eight":document.getElementById("display").value=document.getElementById("display").value+"8";	
+				break;
+		case "nine":document.getElementById("display").value=document.getElementById("display").value+"9";	
+				break;
+		case "zero":document.getElementById("display").value=document.getElementById("display").value+"0";	
+				break;
+		case "point":document.getElementById("display").value=document.getElementById("display").value+".";	
+				break;
+		case "ce":document.getElementById("display").value="";
+				break;
+		case "plus":document.getElementById("display").value=document.getElementById("display").value+"+";
+				break;
+		case "equals": var sum=document.getElementById("display").value;
+							document.getElementById("display").value=add(sum);											
+
+	}
+
+	function add(sum)
+	{
+		var arr=sum.split("+");
+		var res=0;
+		for(var i=0;i<arr.length;i++)
+			res=res+parseFloat(arr[i]);
+		return res;
+	}
+}
+
+</script>
+</body>
+</html>
